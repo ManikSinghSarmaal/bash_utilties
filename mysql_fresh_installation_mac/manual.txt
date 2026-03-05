@@ -1,0 +1,13 @@
+#cleanup anaconda mysql
+1. bash kill_process.sh
+2. bash remove_anaconda_sql.sh
+3. bash uninstall_homebrew_sql.sh
+4. bash remove_config_files.sh
+5. bash remove_file_links_pid.sh
+6. bash brew_cleanup.sh
+7. bash install_mysql_8p4.sh
+8. bash manual_pass_reset.sh
+
+# flush privileges, and set password {in manual_pass_reset.sh}
+
+/opt/homebrew/opt/mysql@8.4/bin/mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'chooseAStrongPasswordHere';FLUSH PRIVILEGES;EXIT;"
